@@ -10,9 +10,9 @@
 // WHEN the game is over
 // THEN I can save my initials and my score
 // USED FOR STARTER CODE https://www.sitepoint.com/simple-javascript-quiz/#:~:text=For%20each%20question%2C%20we'll,in%20a%20element.
-const quizDiv = document.getElementById('quiz');
-const resultsDiv = document.getElementById('results');
-const submitButton = document.getElementById('submit')
+const quizContainer = document.getElementById('quiz');
+const resultsConatiner = document.getElementById('results');
+const submitButton = document.getElementById('submit');
 
 function buildQuiz(){}
 
@@ -22,7 +22,7 @@ buildQuiz();
 
 submitButton.addEventListener('click', showResults);
 
-const questions = [
+var questions = [
     {
         question: "Which of the following is not a data type in JavaScript? ",
         answers: {
@@ -32,6 +32,7 @@ const questions = [
             D: "Character"
         },
         correctAnswer: "D"
+        
     }, 
      
 
@@ -70,7 +71,7 @@ const questions = [
     // correctAnswer: "",
 function buildQuiz(){
     // variable to store the HTML output
-    const output = [];
+    
   
     // for each question...
     myQuestions.forEach(
