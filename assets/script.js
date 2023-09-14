@@ -31,7 +31,7 @@ const questions = [
             C: "Number",
             D: "Character"
         },
-        correctAnswer: 'D'
+        correctAnswer: "D"
     }, 
      
 
@@ -77,7 +77,7 @@ function buildQuiz(){
       (currentQuestion, questionNumber) => {
   
         // variable to store the list of possible answers
-        const answers = [];
+        const answers = ["A", "B", "C","D"];
   
         // and for each available answer...
         for(letter in currentQuestion.answers){
@@ -103,3 +103,11 @@ function buildQuiz(){
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
   }]
+
+  myQuestions.forEach( (currentQuestion, questionNumber) => {
+    // the code we want to run for each question goes here
+  });
+  quizContainer.innerHTML = output.join('');
+
+// Event listeners
+submitButton.addEventListener('click', showResults);
