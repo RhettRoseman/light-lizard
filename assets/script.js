@@ -14,6 +14,7 @@ const quizContainer = document.getElementById('quiz');
 const resultsConatiner = document.getElementById('results');
 const submitButton = document.getElementById('submit');
 
+
 function buildQuiz(){}
 
 function showResults(){}
@@ -22,7 +23,7 @@ buildQuiz();
 
 submitButton.addEventListener('click', showResults);
 
-var questions = [
+const questions = [
     {
         question: "Which of the following is not a data type in JavaScript? ",
         answers: {
@@ -31,47 +32,38 @@ var questions = [
             C: "Number",
             D: "Character"
         },
-        correctAnswer: "D"
+        correctAnswer: "D",
         
     }, 
      
 
-    // {
-    //     question: "",
-    //     answers: {
-    //         A: "",
-    //         B: "",
-    //         C: "",
-    //         D: "",
-    //     }
+    {
+        question: "What is the difference between “var” and “let” keywords in JavaScript?",
+        answers: {
+            A: "They are interchangeable",
+            B: "var” variables cannot be reassigned, while “let” variables can",
+            C: " “let” variables have block scope, while “var” variables have function scope",
+            D: " “var” and “let” both refer to constant variables",
+        }
          
-    // }, 
-    // correctAnswer: "",
-    // {
-    //     question: ""
-    //     answers: {
-    //         A: "",
-    //         B: "",
-    //         C: "",
-    //         D: "",
-    //     }
-         
-    // }, 
-    // correctAnswer: "",
-    // {
-    //     question: "",
-    //     answers: {
-    //         A: "",
-    //         B: "",
-    //         C: "",
-    //         D: "",
-    //     }
-         
-    // }, 
-    // correctAnswer: "",
+    }, 
+    correctAnswer, "C",
+    {
+        question: "Which of the following is not a comparison operator in JavaScript?",
+        answers: {
+            A: " ==",
+            B: "===",
+            C: "!=",
+            D: "=<",
+        }
+        },
+    
+    correctAnswer, "D"
+];
+
 function buildQuiz(){
     // variable to store the HTML output
-    
+    const output = [];
   
     // for each question...
     myQuestions.forEach(
@@ -99,11 +91,11 @@ function buildQuiz(){
           <div class="answers"> ${answers.join('')} </div>`
         );
       }
-    );
+    )
   
     // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
-  }]
+  }
 
   myQuestions.forEach( (currentQuestion, questionNumber) => {
     // the code we want to run for each question goes here
