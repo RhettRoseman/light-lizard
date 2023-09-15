@@ -105,12 +105,12 @@ function showQuestion(){
         answerButtons.appendChild(button);
     });
 }
-// {
-//     button.dataset.correct = answer.correct;
-// }        if(answer.correct ){
-//         button.dataset.correct = answer.correct
-// }
-//         button.addEventListener("click", selectAnswer);
+{
+    button.dataset.correct = answer.correct;
+}        if(answer.correct ){
+        button.dataset.correct = answer.correct
+}
+        button.addEventListener("click", selectAnswer);
     
 // // removes all of the previous answers
 // function resetState(){
