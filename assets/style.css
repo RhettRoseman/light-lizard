@@ -4,10 +4,10 @@
     font-family: 'Open Sans', sans-serif;
     font-family: 'Titillium Web', sans-serif;
      box-sizing: border-box;
-     background-color: #227a5c;
+     background-color:#232b2b
 }
 body{
-    color: #fff;
+    color: #ffffff;
 
 }
 .app{
@@ -21,7 +21,7 @@ body{
 
 .app h1{
     font-weight: 20px;
-    color: #001e4d;
+    color:#ffffff;
     font-weight: 600;
     border-bottom: 1px solid #fff;
     padding-bottom: 30px;
@@ -33,7 +33,7 @@ body{
 font-size: 18px;
 font-weight: 600;
 }
-.button {
+.btn {
 background: #fff;
 color: #222;
 font-weight: 500;
@@ -46,7 +46,7 @@ border-radius: 4px;
 cursor:pointer;
 
 }
-.button:hover{
+.btn:hover{
     background: #227a5c;
     color: #fff;
 }
@@ -62,4 +62,10 @@ margin: 20px auto 0;
 border-radius: 4px;
 cursor: pointer;
 display: none;
+}
+.correct{
+    background:#048018 ;
+}
+.incorrect{
+    background:#890b20;
 }

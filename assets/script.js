@@ -19,48 +19,42 @@
 // submitButton.addEventListener('click', showResults);
 //Questions that will be put througn the system
 
-
-
+// questions to be asked 
 const questions = [
     {
         question: "Which of the following is not a data type in JavaScript? ",
-        answers: [{
-            A:{text: "Boolean", correct:false},
-            B: {text: "String", correct:false},
-            C: {text:"Number", correct:false},
-            D: {text:"Character", correct:true},
+        answers: [
+            {text: "Boolean", correct:false},
+             {text: "String", correct:false},
+             {text:"Number", correct:false},
+             {text:"Character", correct:true},
         
-        }],
-        correctAnswer: "D",
-        
+        ]
     }, 
      
 
     {
         question: "What is the difference between “var” and “let” keywords in JavaScript?",
-        answers: [{
-            A: {text: "They are interchangeable", correct: false},
-            B: {text: "var” variables cannot be reassigned, while “let” variables can",  correct: false},
-            C: {text:" “let” variables have block scope, while “var” variables have function scope",correct: true},
-            D: {text:" “var” and “let” both refer to constant variables", correct: false},
-        }]
+        answers: [
+             {text: "They are interchangeable", correct: false},
+             {text: "var” variables cannot be reassigned, while “let” variables can",  correct: false},
+             {text:" “let” variables have block scope, while “var” variables have function scope",correct: true},
+             {text:" “var” and “let” both refer to constant variables", correct: false},
+        ]
          
     }, 
-    correctAnswer, "C",
     {
         question: "Which of the following is not a comparison operator in JavaScript?",
-        answers: [{
-            A: {text:" ==", correct:false},
-            B: {text:"===", correct:false},
-            C: {text:"!=", correct:false},
-            D: {text:"=<",correct:true},
-        },]
-        },
-    
-    correctAnswer, "D"
+        answers: [
+             {text:" ==", correct:false},
+            {text:"===", correct:false},
+             {text:"!=", correct:false},
+             {text:"=<",correct:true},
+        ]
+        }
 ];
 
-// elements for functions 
+// ids from the html turned in to const variables
 const questionElement = document.getElementById("question");
 const answerButtons =  document.getElementById("answer-buttons");
 const nextButton = document.getElementById("Submit-btn")
@@ -85,7 +79,7 @@ function showQuestion(){
     //displays answer 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
-        button.innerHTML = anser.text;
+        button.innerHTML = answer.text;
         button.classList.add("Submit-btn");
         answerButtons.appendChild(button);
     });
@@ -106,33 +100,41 @@ function showQuestion(){
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("answerButtons");
-        button.innerHTML = anser.text;
-        button.classList.add("Submit-btn");
-        answerButtons.appendChild(button)
-{
-    button.dataset.correct = answer.correct;
-}        if(answer.correct ){
-        button.dataset.correct = answer.correct
-}
-        button.addEventListener("click", selectAnswer);
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
     });
 }
-// removes all of the previous answers
-function resetState(){
-    submitButton.style.display = "none"
-    while(answerButtons.firstChild){
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
-}
+// {
+//     button.dataset.correct = answer.correct;
+// }        if(answer.correct ){
+//         button.dataset.correct = answer.correct
+// }
+//         button.addEventListener("click", selectAnswer);
+    
+// // removes all of the previous answers
+// function resetState(){
+//     submitButton.style.display = "none"
+//     while(answerButtons.firstChild){
+//         answerButtons.removeChild(answerButtons.firstChild);
+//     }
+// }
 
-function selectanser(e){
-    const selectedButton = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
-    if(isCorrect){
-        selectedButton.classlist.add("correct");
-}else{
-    selectedButton.classList.add("incorrect");
-}
+// function selectanswer(e){
+//     const selectedButton = e.target;
+//     const isCorrect = selectedBtn.dataset.correct === "true";
+//     if(isCorrect){
+//         selectedButton.classlist.add("correct");
+// }else{
+//     selectedButton.classList.add("incorrect");
+// }
+// button,disabled = true;
+// Array.from(nserButtons.children).forEach(button => {
+//     if(button.dataset.correct === "true"){
+//         button.classList.add("correct");
+//     }
+// })
+// }
 startQuiz();
 
 // function buildQuiz(){
