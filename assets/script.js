@@ -84,9 +84,9 @@ function showQuestion(){
 
     //displays answer 
     currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button")
+        const button = document.createElement("button");
         button.innerHTML = anser.text;
-        button.classList.add("Submit-btn")
+        button.classList.add("Submit-btn");
         answerButtons.appendChild(button);
     });
 }
@@ -97,11 +97,43 @@ function startQuiz(){
     nextButton.innerHTML = "submit";
     showQuestion();
 }
-
+//add event listener 
 function showQuestion(){
+    resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + "." + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("answerButtons");
+        button.innerHTML = anser.text;
+        button.classList.add("Submit-btn");
+        answerButtons.appendChild(button)
+{
+    button.dataset.correct = answer.correct;
+}        if(answer.correct ){
+        button.dataset.correct = answer.correct
+}
+        button.addEventListener("click", selectAnswer);
+    });
+}
+// removes all of the previous answers
+function resetState(){
+    submitButton.style.display = "none"
+    while(answerButtons.firstChild){
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
+
+function selectanser(e){
+    const selectedButton = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if(isCorrect){
+        selectedButton.classlist.add("correct");
+}else{
+    selectedButton.classList.add("incorrect");
+}
+startQuiz();
 
 // function buildQuiz(){
 //     // variable to store the HTML output
