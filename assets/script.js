@@ -18,9 +18,6 @@ const submitButton = document.getElementById('submit');
 function buildQuiz(){}
 
 function showResults(){}
-
-buildQuiz();
-
 submitButton.addEventListener('click', showResults);
 
 const questions = [
