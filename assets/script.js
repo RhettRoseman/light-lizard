@@ -20,6 +20,9 @@
 //Questions that will be put througn the system
 
 // questions to be asked 
+var submitButton = document.getElementById('#submit-btn');
+var: event = addEventListener('click')
+
 const questions = [
     {
         question: "Which of the following is not a data type in JavaScript? ",
@@ -106,11 +109,10 @@ function showQuestion(){
     });
 }
 {
-    button.dataset.correct = answer.correct;
-}        if(answer.correct ){
-        button.dataset.correct = answer.correct
+    submitButton.addEventListener("click", function(event)) {
+        event.stopPropagation();
 }
-        button.addEventListener("click", selectAnswer);
+        // submitButton.addEventListener("click", selectAnswer);
     
 // // removes all of the previous answers
 // function resetState(){
