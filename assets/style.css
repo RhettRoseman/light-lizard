@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
@@ -61,11 +61,11 @@ width: 160px;
 margin: 20px auto 0;
 border-radius: 4px;
 cursor: pointer;
-display: none;
-}
+/* display: none; */
+/* }
 .correct{
     background:#048018 ;
 }
 .incorrect{
     background:#890b20;
-}
+} */ 

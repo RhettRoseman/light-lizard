@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Quiz App</title>
 </head>
-
-<body class="body">
-<div class="app">
-<div id="quiz"></div>
-    <h1>javaScript Quiz</h1>
-    <h2 id="questions">Display Question Here</h2>
-    <div id="answer-buttons">
-    <button class="btn">Answer 1 </button>
-    <button class="btn">Answer 2 </button>
-    <button class="btn">Answer 3 </button>
-    <button class="btn">Answer 4 </button>
+<div class="container">
+    <div id="question-container" class="hide"></div>
 </div>
-<button id="Submit-btn">Submit</button>
- </div> 
-<button id="start">Start</button>
-    <div id="results"></div>
-   <script src="./assets/script.js"></script>
-</body>
-</html>
+<div class="controls">
+    <span id="count">120</span> seconds
+    <br>
+    <button id='start' onclick="start()">
+        START
+    </button>
+    <p id="question"></p>
+    <!-- <button id="start-btn" onclick="log()"></button> -->
+    <ul class="answer-buttons">
+        <li class="answer a1"></li>
+        <li class="answer a2"></li>
+        <li class="answer a3"></li>
+        <li class="answer a4"></li>
+    </ul>
 
-        <!-- `<label>
-          <input type="radio" name="question${questionNumber}" value="${letter}">
-          </label>`
-          `<label>
-                 <input type="radio" name="question${questionNumbgita er}" value="${letter}">
-            </label>`
-        `<label>
-                <input type="radio" name="question${questionNumber}" value="${letter}">
-         </label>`
-                `<label>
-                    <input type="radio" name="question${questionNumber}" value="${letter}">
-                    </label>` -->
+</div>
+<div id="qcc"></div>
+<h1>javaScript Quiz</h1>
+<h2 id="questions container"></h2>
+<div id="answer-buttons">
+    <script src="./assets/script.js"></script>
+    </body>
+
+</html>
