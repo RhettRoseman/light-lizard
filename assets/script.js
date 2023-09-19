@@ -9,37 +9,6 @@
 // THEN the game is over
 // WHEN the game is over
 // THEN I can save my initials and my score'
-let playing =false
-let startBtn;
-
-
-
-
-// function nextQuestion (){
-// document.getElementById("question-container").replaceWith("h2Element", question[0])
-
-
-// }
-// function startGame() {
-//     document.getElementById("startBtn").addEventListener("click", question[0])
-//     nextQuestion()
-// }
-// $("#startClock").click( function(){
-//     var counter = 5;
-//     setInterval(function() {
-//       counter--;
-//        if (counter >= 0) {
-//           span = document.getElementById("count");
-//           span.innerHTML = counter;
-//        }
-//        if (counter === 0) {
-//           alert('sorry, out of time');
-//           clearInterval(counter);
-//         }
-//       }, 1000);
-//  });
-
-
 //starts timer
 function startTimer(){
     var counter = 120;
@@ -59,10 +28,22 @@ function startTimer(){
   {
       document.getElementById("count").style="color:green;";
       startTimer();
+      
   };
+function createDiv(){
+let div = document.createElement("div");
+div.append(question[0]);
+console.log(question[0])
+}
 
+function openArray(){
+    let pEl = document.getElementById("question");
+    
+    // pEl.append("Which of the following is not a data type in JavaScript?", div)
+return pEl.toString(question[0])
 
-
+} 
+// question[0]
 // question array
 const question = [
     {
