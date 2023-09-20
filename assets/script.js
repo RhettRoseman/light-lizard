@@ -1,3 +1,18 @@
+var tempArr = [
+  {
+  food: "taco",
+  vegan: false
+},
+{
+  food: "burrito",
+  vegan: false
+},
+{
+  food: "salsa",
+  vegan: true
+},
+]
+tempArr[2].vegan
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question
@@ -8,175 +23,122 @@
 // WHEN all questions are answered or the timer reaches 0
 // THEN the game is over
 // WHEN the game is over
-// THEN I can save my initials and my score
-// USED FOR STARTER CODE https://www.sitepoint.com/simple-javascript-quiz/#:~:text=For%20each%20question%2C%20we'll,in%20a%20element.
-// const quizContainer = document.getElementById('quiz');
-// const resultsConatiner = document.getElementById('results');
-// const submitButton = document.getElementById('submit');
-
-
-// function buildQuiz(){}// function showResults(){}
-// submitButton.addEventListener('click', showResults);
-//Questions that will be put througn the system
-
-// questions to be asked 
-const questions = [
-    {
-        question: "Which of the following is not a data type in JavaScript? ",
-        answers: [
-            {text: "Boolean", correct:false},
-             {text: "String", correct:false},
-             {text:"Number", correct:false},
-             {text:"Character", correct:true},
-        
-        ]
-    }, 
-     
-
-    {
-        question: "What is the difference between “var” and “let” keywords in JavaScript?",
-        answers: [
-             {text: "They are interchangeable", correct: false},
-             {text: "var” variables cannot be reassigned, while “let” variables can",  correct: false},
-             {text:" “let” variables have block scope, while “var” variables have function scope",correct: true},
-             {text:" “var” and “let” both refer to constant variables", correct: false},
-        ]
-         
-    }, 
-    {
-        question: "Which of the following is not a comparison operator in JavaScript?",
-        answers: [
-             {text:" ==", correct:false},
-            {text:"===", correct:false},
-             {text:"!=", correct:false},
-             {text:"=<",correct:true},
-        ]
-        }
-];
-
-// ids from the html turned in to const variables
-const questionElement = document.getElementById("question");
-const answerButtons =  document.getElementById("answer-buttons");
-const nextButton = document.getElementById("Submit-btn")
-
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-//keeps users score
-function startQuiz(){
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "submit";
-    showQuestion();
-}
-// shows next question and displays answers 
-function showQuestion(){
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + "." + currentQuestion.question;
-
-    //displays answer 
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("Submit-btn");
-        answerButtons.appendChild(button);
-    });
+// THEN I can save my initials and my score'
+//starts timer
+function startTimer(){
+    var counter = 120;
+    setInterval(function() {
+      counter--;
+      if (counter >= 0) {
+        span = document.getElementById("count");
+        span.innerHTML = counter;
+      }
+      if (counter === 0) {
+          alert('sorry, out of time');
+          clearInterval(counter);
+      }
+    }, 1000);
+  }
+  function start()
+  {
+      document.getElementById("count").style="color:green;";
+      startTimer();
+      
+  };
+function createDiv(){
+let div = document.createElement("div");
+div.append(question[0]);
+console.log(question[0])
 }
 
-function startQuiz(){
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "submit";
-    showQuestion();
-}
-//add event listener 
-function showQuestion(){
-    resetState();
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + "." + currentQuestion.question;
-
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("answerButtons");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButtons.appendChild(button);
-    });
-}
-{
-    button.dataset.correct = answer.correct;
-}        if(answer.correct ){
-        button.dataset.correct = answer.correct
-}
-        button.addEventListener("click", selectAnswer);
+function openArray(){
+    let pEl = document.getElementById("question");
     
-// // removes all of the previous answers
-// function resetState(){
-//     submitButton.style.display = "none"
-//     while(answerButtons.firstChild){
-//         answerButtons.removeChild(answerButtons.firstChild);
+     pEl.textContent = question[0].title;
+
+     for (let index = 0; index < question[0].answers.length; index++) {
+      let button =   document.createElement("button");
+      button.textContent = question[0].answers[index];
+      console.log( document.getElementsByClassName("button-holder"))
+      document.getElementsByClassName("button-holder")[0].appendChild(button);
+      
+     }
+     pEl.textContent 
+
+} 
+// question[0]
+// question array
+const question = [
+    {
+    title: "Which of the following is not a data type in JavaScript? ",
+    answers: [ "Boolean", "String", "Number", "Character"],
+    //correct array[3],
+    }
+    // title: "",
+]
+// function vstar () {
+//    var start = document.getElementById('start')
+//     start.addEventListener("click", start())
+    
+// }
+
+
+function showQuestion (){
+    document.getElementsById("question").textcontent = "Which of the following is not a data type in JavaScript ?"
+} 
+// for( var i = 0 ; i < question.length; i++) {
+//  var pEl = document.getElementsByClassName("answer")
+// pEl.textcontent = question++ ;
+//   document.write("This is the third line.") 
+
+// ****************
+    
+
+
+    // return question[0].title[0];
+    // function log() {
+    //     document.getElementById('questions-container')
+    //     questio
+    //     // document.write(question1);
+    // document.write(question);  
+    //   document.write("<br>");    
+    //   document.write("This is the second line which is divided using break line.").getElementById("li");  
+    //   document.write("<br>");    
+    //   document.write("This is the third line.")  
+// const question = document.getElementById('question')
+ 
+//     }]
+// // // Dom Element 
+
+
+    
+//     function showQuestion(q) {
+//         let titleDiv = document.getElementById('title').textContent= question
+
 //     }
-// }
+    
+//     showQuestion();
+    
+//     {
+//     question: "What is the difference between “var” and “let” keywords in JavaScript?",
+//     answers: [
+//     { text: "They are interchangeable", correct: false },
+//     { text: "var” variables cannot be reassigned, while “let” variables can", correct: false },
+//     { text: " “let” variables have block scope, while “var” variables have function scope", correct: true },
+//     { text: " “var” and “let” both refer to constant variables", correct: false },
+//     // correct answer array[2]
+//     ]
 
-// function selectanswer(e){
-//     const selectedButton = e.target;
-//     const isCorrect = selectedBtn.dataset.correct === "true";
-//     if(isCorrect){
-//         selectedButton.classlist.add("correct");
-// }else{
-//     selectedButton.classList.add("incorrect");
-// }
-// button,disabled = true;
-// Array.from(nserButtons.children).forEach(button => {
-//     if(button.dataset.correct === "true"){
-//         button.classList.add("correct");
+//     },
+//     {
+//     question: "Which of the following is not a comparison operator in JavaScript?",
+//     answers: [
+//     { text: " ==", correct: false },
+//     { text: "===", correct: false },
+//     { text: "!=", correct: false },
+//     { text: "=<", correct: true },
+//     // corrrect answer array[4]
+//     ]
 //     }
-// })
-// }
-startQuiz();
-
-// function buildQuiz(){
-//     // variable to store the HTML output
-//     const output = [];
-  
-//     // for each question...
-//     myQuestions.forEach(
-//       (currentQuestion, questionNumber) => {
-  
-//         // variable to store the list of possible answers
-//         const answers = ["A", "B", "C","D"];
-  
-//         // and for each available answer...
-//         for(letter in currentQuestion.answers){
-  
-//           // ...add an HTML radio button
-//           answers.push(
-//             `<label>
-//               <input type="radio" name="question${questionNumber}" value="${letter}">
-//               ${letter} :
-//               ${currentQuestion.answers[letter]}
-//             </label>`
-//           );
-//         }
-  
-//         // add this question and its answers to the output
-//         output.push(
-//           `<div class="question"> ${currentQuestion.question} </div>
-//           <div class="answers"> ${answers.join('')} </div>`
-//         );
-//       }
-//     )
-  
-//     // finally combine our output list into one string of HTML and put it on the page
-//     quizContainer.innerHTML = output.join('');
-//   }
-
-//   myQuestions.forEach( (currentQuestion, questionNumber) => {
-//     // the code we want to run for each question goes here
-//   });
-//   quizContainer.innerHTML = output.join('');
-
-// Event listeners
-submitButton.addEventListener('click', showResults);
+    
+    
