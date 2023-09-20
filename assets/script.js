@@ -1,3 +1,18 @@
+var tempArr = [
+  {
+  food: "taco",
+  vegan: false
+},
+{
+  food: "burrito",
+  vegan: false
+},
+{
+  food: "salsa",
+  vegan: true
+},
+]
+tempArr[2].vegan
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question
@@ -39,8 +54,16 @@ console.log(question[0])
 function openArray(){
     let pEl = document.getElementById("question");
     
-    // pEl.append("Which of the following is not a data type in JavaScript?", div)
-return pEl.toString(question[0])
+     pEl.textContent = question[0].title;
+
+     for (let index = 0; index < question[0].answers.length; index++) {
+      let button =   document.createElement("button");
+      button.textContent = question[0].answers[index];
+      console.log( document.getElementsByClassName("button-holder"))
+      document.getElementsByClassName("button-holder")[0].appendChild(button);
+      
+     }
+     pEl.textContent 
 
 } 
 // question[0]
