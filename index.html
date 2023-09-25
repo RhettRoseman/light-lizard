@@ -8,27 +8,38 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Quiz App</title>
 </head>
-<div class="container">
-    <div id="question-container" class="hide"></div>
-</div>
-<div class="controls">
-    <span id="count">120</span> seconds
-    <br>
-    <button id='start' onclick="start(), openArray()">
-        START
-    </button>
-    <div>
-    <p id="question"></p>
-<div class="button-holder"></div>
 
+<body style="background-image: url(images/htmljs.jpg);">
+    <header>
+        <h1>javaScript Quiz</h1>
+    </header>
+    <div class="container">
+        <div id="question-container" class="hide"></div>
     </div>
+    <div class="controls">
+        <span id="count">120</span> seconds
+        <br>
+        <button id='start' onclick="start(), openArray()" ondblclick="openNxt()">
+            START
+        </button>
+        <div style="background-image:url(images/htmljs.jpg);">
+            <p id="question"></p>
+            <p id="q2"></p>
+            <div class="button-holder"></div>
+        </div>
+        <br>
+        <div>
+            <button id="next" class="next" onclick="openNxt()" ondblclick="openNxt1()">NEXT</button>
+            <button>
+            NEXT    
+            </button>
 
-</div>
-<div id="qcc"></div>
-<h1>javaScript Quiz</h1>
-<h2 id="questions container"></h2>
-<div id="answer-buttons">
-    <script src="./assets/script.js"></script>
-    </body>
+        </div>
+    </div>
+    <div id="qcc"></div>
+    <h2 id="questions container"></h2>
+    <div id="answer-buttons">
+        <script src="./assets/script.js"></script>
+</body>
 
 </html>

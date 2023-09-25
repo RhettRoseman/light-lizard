@@ -1,71 +1,15 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Titillium Web', sans-serif;
-     box-sizing: border-box;
-     background-color:#232b2b
+/* *{
+    background-image:url(images/htmljs.jpg);
+    color: white;
 }
-body{
-    color: #ffffff;
+h1{
+    color: white;
+    text-align: center;
+}
+button{
+    background-color: rgb(16, 105, 88);
+}
+#answer-buttons{
+color: black;
 
-}
-.app{
-    background: #fff;
-    width: 90%;
-    max-width: 600px;
-    margin: 100px auto 0;
-    border-radius: 10px;
-    padding: 30px;
-}
-
-.app h1{
-    font-weight: 20px;
-    color:#ffffff;
-    font-weight: 600;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 30px;
-}
-.quiz{
-    padding: 20px 0;
-}
-.quiz h2{
-font-size: 18px;
-font-weight: 600;
-}
-.btn {
-background: #fff;
-color: #222;
-font-weight: 500;
-width: 100%;
-border: 1px solid #222;
-padding:  10px;
-margin: 10px 0;
-text-align: left;
-border-radius: 4px;
-cursor:pointer;
-
-}
-.btn:hover{
-    background: #227a5c;
-    color: #fff;
-}
-
-#Submit-btn{
-background-color: #227a5c;
-color: #fff;
-font-weight: 600;
-border: 1px;
-padding: 10px;
-width: 160px;
-margin: 20px auto 0;
-border-radius: 4px;
-cursor: pointer;
-/* display: none; */
-/* }
-.correct{
-    background:#048018 ;
-}
-.incorrect{
-    background:#890b20;
-} */ 
+} */

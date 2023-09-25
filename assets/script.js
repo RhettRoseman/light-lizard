@@ -1,18 +1,4 @@
-var tempArr = [
-  {
-  food: "taco",
-  vegan: false
-},
-{
-  food: "burrito",
-  vegan: false
-},
-{
-  food: "salsa",
-  vegan: true
-},
-]
-tempArr[2].vegan
+
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question
@@ -56,36 +42,71 @@ function openArray(){
     
      pEl.textContent = question[0].title;
 
-     for (let index = 0; index < question[0].answers.length; index++) {
-      let button =   document.createElement("button");
-      button.textContent = question[0].answers[index];
-      console.log( document.getElementsByClassName("button-holder"))
-      document.getElementsByClassName("button-holder")[0].appendChild(button);
+     for (let index = 0; index < question[0].answers.length; index++){
+      let button = document.createElement("button");
+      button.textContent = question[++].answers[index];
+      console.log(document.getElementsByClassName("button-holder"));
+      document.getElementsByClassName("button-holder")[0].appendChild(button); 
+
       
      }
-     pEl.textContent 
+     pEl.textContent ;
+    }
+    
+    function openNxt(){
+      document.getElementsByClassName("button-holder")[0].innerHTML="";
+      let pElement = document.getElementById("q2");
+    
+      pElement.textContent = question[1].title;
+ 
+      for (let index = 0; index < question[1].answers.length; index++) {
+       let button =   document.createElement("button");
+       button.textContent = question[1].answers[index];
+       console.log( document.getElementsByClassName("button-holder")); 
+      // [div.button-holder]
+       document.getElementsByClassName("button-holder")[0].appendChild(button);
+      }
+      pElement.textContent ;
+     }
+     function openNxt1(){
+      let pElement = document.getElementById("q2");
+    
+      pElement.textContent = question[2].title;
+ 
+      for (let index = 0; index < question[2].answers.length; index++) {
+       let button =   document.createElement("button");
+       button.textContent = question[2].answers[index];
+       console.log( document.getElementsByClassName("button-holder")); 
+      //  [div.button-holder]
+       document.getElementsByClassName("button-holder")[0].appendChild(button);
+       
+      }
+      pElement.textContent ;
+     }
+ 
 
-} 
-// question[0]
-// question array
 const question = [
     {
     title: "Which of the following is not a data type in JavaScript? ",
     answers: [ "Boolean", "String", "Number", "Character"],
     //correct array[3],
-    }
-    // title: "",
-]
-// function vstar () {
-//    var start = document.getElementById('start')
-//     start.addEventListener("click", start())
     
-// }
+    },
+
+    {
+      title: "What is 2 + 2?",
+       answers: ["2","5","4","7"],
+      //correct array [3]
+      },
+   {
+        title: "What's the tallest tree?",
+        answers: ["Redwood", "Sequoia", "Oak", "Hickory"],
+        //correct array[0]
+  },
+       ]
 
 
-function showQuestion (){
-    document.getElementsById("question").textcontent = "Which of the following is not a data type in JavaScript ?"
-} 
+
 // for( var i = 0 ; i < question.length; i++) {
 //  var pEl = document.getElementsByClassName("answer")
 // pEl.textcontent = question++ ;
@@ -119,26 +140,6 @@ function showQuestion (){
     
 //     showQuestion();
     
-//     {
-//     question: "What is the difference between “var” and “let” keywords in JavaScript?",
-//     answers: [
-//     { text: "They are interchangeable", correct: false },
-//     { text: "var” variables cannot be reassigned, while “let” variables can", correct: false },
-//     { text: " “let” variables have block scope, while “var” variables have function scope", correct: true },
-//     { text: " “var” and “let” both refer to constant variables", correct: false },
-//     // correct answer array[2]
-//     ]
-
-//     },
-//     {
-//     question: "Which of the following is not a comparison operator in JavaScript?",
-//     answers: [
-//     { text: " ==", correct: false },
-//     { text: "===", correct: false },
-//     { text: "!=", correct: false },
-//     { text: "=<", correct: true },
-//     // corrrect answer array[4]
-//     ]
-//     }
+  
     
     
