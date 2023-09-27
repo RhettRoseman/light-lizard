@@ -27,7 +27,7 @@ function startTimer(){
   }
   function start()
   {
-      document.getElementById("count").style="color:green;";
+      document.getElementById("count").style= "color:green;"
       startTimer();
       
   };
@@ -44,11 +44,9 @@ function openArray(){
 
      for (let index = 0; index < question[0].answers.length; index++){
       let button = document.createElement("button");
-      button.textContent = question[++].answers[index];
+      button.textContent = question[0].answers[index];
       console.log(document.getElementsByClassName("button-holder"));
       document.getElementsByClassName("button-holder")[0].appendChild(button); 
-
-      
      }
      pEl.textContent ;
     }
@@ -68,21 +66,21 @@ function openArray(){
       }
       pElement.textContent ;
      }
-     function openNxt1(){
-      let pElement = document.getElementById("q2");
+    // //  function openNxt1(){
+    //   let pElement = document.getElementById("q2");
     
-      pElement.textContent = question[2].title;
+    //   pElement.textContent = question[2].title;
  
-      for (let index = 0; index < question[2].answers.length; index++) {
-       let button =   document.createElement("button");
-       button.textContent = question[2].answers[index];
-       console.log( document.getElementsByClassName("button-holder")); 
-      //  [div.button-holder]
-       document.getElementsByClassName("button-holder")[0].appendChild(button);
+    //   for (let index = 0; index < question[2].answers.length; index++) {
+    //    let button =   document.createElement("button");
+    //    button.textContent = question[2].answers[index];
+    //    console.log( document.getElementsByClassName("button-holder")); 
+    //   //  [div.button-holder]
+    //    document.getElementsByClassName("button-holder")[0].appendChild(button);
        
-      }
-      pElement.textContent ;
-     }
+    //   }
+    //   pElement.textContent ;
+    //  }
  
 
 const question = [
