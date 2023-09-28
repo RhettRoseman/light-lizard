@@ -21,7 +21,6 @@ function startTimer(){
         span.innerHTML = counter;
       }
       if (counter === 0) {
-          alert('sorry, out of time');
           clearInterval(counter);
       }
     }, 1000);
@@ -30,63 +29,68 @@ function startTimer(){
   {
       document.getElementById("count").style="color:green;";
       startTimer();
+    
       
   };
 
-  function userScore() {
-    if (selectedAnswer === 'correct') {
-        scoreCounter = scoreCounter + 5; // increases scoreCounter by 5
+//   function userScore() {
+//     if (selectedAnswer === 'correct') {
+//         scoreCounter = scoreCounter + 5; // increases scoreCounter by 5
 
-        // sets the element text to the current score
-        scoreCounterElemet.innerText = scoreCounter; 
-    }
-    console.log('Increase Score')
-}
+//         // sets the element text to the current score
+//         scoreCounterElemet.innerText = scoreCounter; 
+//     }
+//     console.log('Increase Score')
+// }
 
-function createDiv(){
-let div = document.createElement("div");
-div.append(question[0]);
-console.log(question[0])
-}
 
-function openArray(){
-    let pEl = document.getElementById("question");
-    
-     pEl.textContent = question[0].title;
-
-     for (let index = 0; index < question[0].answers.length; index++) {
-      let button =   document.createElement("button");
-      button.textContent = question[0].answers[index];
-      console.log( document.getElementsByClassName("button-holder"))
-      document.getElementsByClassName("button-holder")[0].appendChild(button);
-      button.addEventListener( "click")
-      
-     }
-     pEl.textContent 
-
-// question[0]
-// question array
 const question = [
     {
     title: "Which of the following is not a data type in JavaScript? ",
     answers: [ "Boolean", "String", "Number", "Character"],
     //correct array[3],
+    title: "Which of the following is not a data type in JavaScript? ",
+    answers: [ "Boolean", "String", "Number", "Character"],
+    //correct array[3],
     },
     {
-      title: "",
-      answers: [],
+      title: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+      answers: ["Position", "Window", "Standard", "Location"],
+      // correct array[1]
     },
     {
-      title:"",
-      answers: [],
+      title:"Which of the following scoping type does JavaScript use?",
+      answers: ["Sequential", "Segmental", "Lexical", "Literal"],
+      //correct array[2]
     },
-    // title: "",
-]
+ 
+  ]
 // function vstar () {
 //    var start = document.getElementById('start')
 //     start.addEventListener("click", start())
     
 // }
+function createDiv(){
+  let div = document.createElement("div");
+  div.append(question[0]);
+  console.log(question[0])
+  }
+  
+  function openArray(){
+      let pEl = document.getElementById("question");
+      
+       pEl.textContent = question[0].title;
+   
+       for (let index = 0; index < question[0].answers.length; index++) {
+        let button = document.createElement("button");
+        button.textContent = question[0].answers[index];
+        console.log( document.getElementsByClassName("button-holder"));
+        document.getElementsByClassName("button-holder")[0].appendChild(button);
+       }
+       pEl.textContent ;
+  
+  // question[0]
+  // question array
 
 
 function showQuestion (){
@@ -147,4 +151,4 @@ function showQuestion (){
 //     ]
 //     }
     
-    
+}
