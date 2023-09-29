@@ -113,7 +113,7 @@ function nextQuestion() {
   //  document.getElementsByClassName('button-holder').innerHTML="";
   // let nextQuestion = document.getElementById('question').textContent = question[1].title;
   // let nextButton = document.document.getElementsByClassName('button-holder').textContent = question[1].answers[0].index;
-  document.documentElement.textContent = "";
+  
   // let pEl = document.getElementById("question");
 
   pEl.textContent = question[1].title;
