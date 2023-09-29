@@ -11,144 +11,101 @@
 // WHEN the game is over
 // THEN I can save my initials and my score'
 //starts timer
+// var textArea = document.getElementById('text-area').innerHTML = "";
+var startBtn = document.getElementById('start');
+var scoreBoard = document.getElementById('userScore');
 var score = 0;
-function startTimer(){
-    var counter = 120;
-    setInterval(function() {
-      counter--;
-      if (counter >= 0) {
-        span = document.getElementById("count");
-        span.innerHTML = counter;
-      }
-      if (counter === 0) {
-          clearInterval(counter);
-      }
-    }, 1000);
-  }
-  function start()
-  {
-      document.getElementById("count").style="color:green;";
-      startTimer();
-    
-      
-  };
+function startTimer() {
+  var counter = 120;
+  setInterval(function () {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("count");
+      span.innerHTML = counter;
+    }
+    if (counter === 0) {
+      clearInterval(counter);
+    }
+  }, 1000);
+}
+function start() {
+  document.getElementById("count").style = "color:green;";
+  startTimer();
+  document.getElementById('text-area').innerHTML= "";
 
-//   function userScore() {
-//     if (selectedAnswer === 'correct') {
-//         scoreCounter = scoreCounter + 5; // increases scoreCounter by 5
 
-//         // sets the element text to the current score
-//         scoreCounterElemet.innerText = scoreCounter; 
-//     }
-//     console.log('Increase Score')
-// }
+};
+
+
+  function userScore() {
+  scoreBoard.innerHTML= "score";
+    if (selectedAnswer === 'correct') {
+        userScore = score + 1; // increases scoreCounter by 
+
+        // sets the element text to the current score
+        scoreCounterElement.innerText = scoreCounter; 
+    }
+    console.log('Increase Score')
+} 
 
 
 const question = [
-    {
+  {
     title: "Which of the following is not a data type in JavaScript? ",
-    answers: [ "Boolean", "String", "Number", "Character"],
+    answers: ["Boolean", "String", "Number", "Character"],
     //correct array[3],
-    title: "Which of the following is not a data type in JavaScript? ",
-    answers: [ "Boolean", "String", "Number", "Character"],
-    //correct array[3],
-    },
-    {
-      title: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
-      answers: ["Position", "Window", "Standard", "Location"],
-      // correct array[1]
-    },
-    {
-      title:"Which of the following scoping type does JavaScript use?",
-      answers: ["Sequential", "Segmental", "Lexical", "Literal"],
-      //correct array[2]
-    },
- 
-  ]
+    correctAnswer: "Character",
+  },
+  {
+    title: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+    answers: ["Position", "Window", "Standard", "Location"],
+    // correct array[1]
+    correctAnswer: "Window",
+  },
+  {
+    title: "Which of the following scoping type does JavaScript use?",
+    answers: ["Sequential", "Segmental", "Lexical", "Literal"],
+    //correct array[2]
+    correctAnswer: "Lexical",
+  },
+
+]
 // function vstar () {
 //    var start = document.getElementById('start')
 //     start.addEventListener("click", start())
-    
+
 // }
-function createDiv(){
+function createDiv() {
   let div = document.createElement("div");
   div.append(question[0]);
   console.log(question[0])
-  }
-  
-  function openArray(){
-      let pEl = document.getElementById("question");
-      
-       pEl.textContent = question[0].title;
-   
-       for (let index = 0; index < question[0].answers.length; index++) {
-        let button = document.createElement("button");
-        button.textContent = question[0].answers[index];
-        console.log( document.getElementsByClassName("button-holder"));
-        document.getElementsByClassName("button-holder")[0].appendChild(button);
-       }
-       pEl.textContent ;
-  
-  // question[0]
-  // question array
-
-
-function showQuestion (){
-    document.getElementsById("question").textcontent = "Which of the following is not a data type in JavaScript ?"
-} 
-// for( var i = 0 ; i < question.length; i++) {
-//  var pEl = document.getElementsByClassName("answer")
-// pEl.textcontent = question++ ;
-//   document.write("This is the third line.") 
-
-// ****************
-    
-
-
-    // return question[0].title[0];
-    // function log() {
-    //     document.getElementById('questions-container')
-    //     questio
-    //     // document.write(question1);
-    // document.write(question);  
-    //   document.write("<br>");    
-    //   document.write("This is the second line which is divided using break line.").getElementById("li");  
-    //   document.write("<br>");    
-    //   document.write("This is the third line.")  
-// const question = document.getElementById('question')
- 
-//     }]
-// // // Dom Element 
-
-
-    
-//     function showQuestion(q) {
-//         let titleDiv = document.getElementById('title').textContent= question
-
-//     }
-    
-//     showQuestion();
-    
-//     {
-//     question: "What is the difference between “var” and “let” keywords in JavaScript?",
-//     answers: [
-//     { text: "They are interchangeable", correct: false },
-//     { text: "var” variables cannot be reassigned, while “let” variables can", correct: false },
-//     { text: " “let” variables have block scope, while “var” variables have function scope", correct: true },
-//     { text: " “var” and “let” both refer to constant variables", correct: false },
-//     // correct answer array[2]
-//     ]
-
-//     },
-//     {
-//     question: "Which of the following is not a comparison operator in JavaScript?",
-//     answers: [
-//     { text: " ==", correct: false },
-//     { text: "===", correct: false },
-//     { text: "!=", correct: false },
-//     { text: "=<", correct: true },
-//     // corrrect answer array[4]
-//     ]
-//     }
-    
 }
+// function that shows the questions
+function openArray() {
+  let pEl = document.getElementById("question");
+
+  pEl.textContent = question[0].title;
+
+  for (let index = 0; index < question[0].answers.length; index++) {
+    let button = document.createElement("button");
+    button.textContent = question[0].answers[index];
+    console.log(document.getElementsByClassName("button-holder"));
+    document.getElementsByClassName("button-holder")[0].appendChild(button);
+    button.addEventListener('click', function () {
+      if (button.innerText == question[0].correctAnswer) {
+        console.log('correct');
+        scoreBoard.innerHTML = + 1;
+
+
+      }
+      else (console.log('incorrectAnswer')
+      )
+    })
+  } 
+
+};
+
+function nextQuestion(){
+
+}
+
