@@ -25,6 +25,7 @@ function startTimer() {
     }
     if (counter === 0) {
       clearInterval(counter);
+      document.getElementById('body').innerHTML= "Times up!!";
     }
   }, 1000);
 }
@@ -95,8 +96,6 @@ function openArray() {
       if (button.innerText == question[0].correctAnswer) {
         console.log('correct');
         scoreBoard.innerHTML = + 1;
-
-
       }
       else (console.log('incorrectAnswer')
       )
@@ -106,6 +105,32 @@ function openArray() {
 };
 
 function nextQuestion(){
+ let thisQuestion = document.getElementById('question').innerHTML="";
+//  document.getElementsByClassName('button-holder').innerHTML="";
+// let nextQuestion = document.getElementById('question').textContent = question[1].title;
+// let nextButton = document.document.getElementsByClassName('button-holder').textContent = question[1].answers[0].index;
+let pEl = document.getElementById("question");
 
-}
+  pEl.textContent = question[1].title;
+
+for (let index = 0; index < question[1].answers.length; index++) {
+  let button = document.createElement("button");
+  document.getElementsByClassName("button-holder").innerHTML="";
+  // button.textContent = "";
+  button.textContent = question[1].answers[index];
+  console.log(document.getElementById("button-holder"));
+  document.getElementsByClassName("button-holder")[0].appendChild(button);
+  button.addEventListener('click', function () {
+    if (button.innerText == question[1].correctAnswer) {
+      console.log('correct');
+      scoreBoard.innerHTML = + 1;
+    }
+    else (console.log('incorrectAnswer')
+    )
+  })
+} 
+
+};
+
+
 
