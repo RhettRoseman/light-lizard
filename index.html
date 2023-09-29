@@ -10,33 +10,35 @@
 </head>
 
 <body>
-   
+
     <div class="container">
         <div id="question-container" class="hide"></div>
     </div>
     <div id="body">
-    <div class="controls">
-        <span id="count">120</span> seconds
-        <br>
-        <div id="userScore"></div>
-        <div id="text-area">
-            <h1>WELCOME TO THE QUIZ</h1>
-            <h2>Test your knowldege on the language of JavaScript</h2>
-            <h3>Press START to begin quiz</h3>
-            <button id='start' onclick="start(), openArray()">
-                START
-            </button>
+        <div class="controls">
+            <span id="count">120</span> seconds
+            <br>
+            <div id="userScore"></div>
+            <div id = "textandquestion">
+            <div id="text-area">
+                <h1>WELCOME TO THE QUIZ</h1>
+                <h2>Test your knowldege on the language of JavaScript</h2>
+                <h3>Press START to begin quiz</h3>
+                <button id='start' onclick="start(), nextQuestion()">
+                    START
+                </button>
+            </div>
+            <div class="question-holder" id="question-holder">
+                <h3 id="question"></h3>
+                <h3 id="q2"></h3>
+                <div id="buttons">
+                    <div id="btnholder" class="button-holder" onclick="nextQuestion()"></div>
+                    <div id="btnhlder2"></div>
+                    <div id="nxt"></div>
+                </div>
+            </div>
+            </div>
         </div>
-        <div class="question-holder" id="question-holder">
-            <h3 id="question"></h3>
-           <h3 id="q2"></h3>
-           <div id="buttons">
-            <div class="button-holder" onclick="nextQuestion()"></div>
-            <div id="btnhlder2"></div>
-            <div id="nxt"></div>
-        </div>
-        </div>
-    </div>
 
         <!-- <div id="qcc"></div>
     <h2 id="questions container"></h2>

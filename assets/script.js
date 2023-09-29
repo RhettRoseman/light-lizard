@@ -14,22 +14,30 @@
 var startBtn = document.getElementById('start'); // targets start button
 var scoreBoard = document.getElementById('userScore');
 var score = 0;
+var q = 0;
 let pEl = document.getElementById("question");
-  // let thisBtn = document.getElementById("button-holder").innerHTML = "";
+var quest = document.getElementById('question-holder');
+// let thisBtn = document.getElementById("button-holder").innerHTML = "";
 
-  //start timer function 
+//start timer function 
 function startTimer() {
   var counter = 120;
   setInterval(function () {
     counter--;
+
     if (counter >= 0) {
       span = document.getElementById("count");
       span.innerHTML = counter;
     }
     if (counter === 0) {
       clearInterval(counter);
-      document.getElementById('body').innerHTML = "Times up!!";
+      document.getElementById("textandquestion").innerHTML = "Times up!! How did you do?";
     }
+    if (quest === ""){
+      clearInterval(counter);
+      document.getElementById("textandquestion").innerHTML = "";
+    }
+
   }, 1000);
 }
 function start() {
@@ -41,16 +49,16 @@ function start() {
 };
 
 
-function userScore() {
-  scoreBoard.innerHTML = "score";
-  if (selectedAnswer === 'correct') {
-    userScore = score + 1; // increases scoreCounter by 
+// function userScore() {
+//   scoreBoard.innerHTML = "score";
+//   if (selectedAnswer === 'correct') {
+//     userScore = score + 1; // increases scoreCounter by 
 
-    // sets the element text to the current score
-    scoreCounterElement.innerText = scoreCounter;
-  }
-  console.log('Increase Score')
-}
+//     // sets the element text to the current score
+//     scoreCounterElement.innerText = scoreCounter;
+//   }
+//   console.log('Increase Score')
+// }
 
 const question = [
   {
@@ -85,61 +93,72 @@ function createDiv() {
 }
 // QUESTION FUNCTIONS 
 // Open Question 0
-function openArray() {
-  // let pEl = document.getElementById("question");
+// function openArray() {
+//   // let pEl = document.getElementById("question");
 
-  pEl.textContent = question[0].title;
+//   pEl.textContent = question[0].title;
 
-  for (let index = 0; index < question[0].answers.length; index++) {
-    let button = document.createElement("button");
-    button.textContent = question[0].answers[index];
-    console.log(document.getElementsByClassName("button-holder"));
-    document.getElementsByClassName("button-holder")[0].appendChild(button);
-    button.addEventListener('click', function () {
-      if (button.innerText == question[0].correctAnswer) {
-        console.log('correct');
-        scoreBoard.innerHTML = + 1;
-        this.remove('button')
-      }
-      else (
- console.log('incorrect')
-      )
-    })
-  }
-
-};
-// Open question 1 
+//   for (let index = 0; index < question[0].answers.length; index++) {
+//     let button = document.createElement("button");
+//     button.textContent = question[0].answers[index];
+//     console.log(document.getElementsByClassName("button-holder"));
+//     document.getElementsByClassName("button-holder")[0].appendChild(button);
+//     button.addEventListener('click', function () {
+//       if (button.innerText == question[0].correctAnswer) {
+//         console.log('correct');
+//         // scoreBoard.innerHTML = score;
+//         console.log(score);
+//         document.getElementById("btnholder").innerHTML = "";
+//         score += 1;
+//         console.log(score);
+//         scoreBoard.innerHTML = score;
+//         nextQuestion()
+//       }
+//      else (
+//       console.log('incorrect')
+//       console.log()
+//      )
+// Open questions 
 function nextQuestion() {
-  //  document.getElementsByClassName('button-holder').innerHTML="";
-  // let nextQuestion = document.getElementById('question').textContent = question[1].title;
-  // let nextButton = document.document.getElementsByClassName('button-holder').textContent = question[1].answers[0].index;
-  
-  // let pEl = document.getElementById("question");
+  pEl.textContent = question[q].title;
 
-  pEl.textContent = question[1].title;
+  for (let index = 0; index < question[q].answers.length; index++) {
 
-  for (let index = 0; index < question[1].answers.length; index++) {
-  
     let button = document.createElement("button");
     // button.textContent = "";
-    button.textContent = question[1].answers[index];
-    console.log(document.getElementById("btnhlder2"));
-    document.getElementsByClassName("btnhlder2")[0].appendChild(button);
+    button.textContent = question[q].answers[index];
+    // console.log(document.getElementById("btnhlder2"));
+    document.getElementById("btnhlder2").appendChild(button);
     button.addEventListener('click', function () {
-      if (button.innerText == question[1].correctAnswer) {
-        console.log('correct');
-        scoreBoard.innerHTML = + 1;
-        document.getElementsById("buttons")
+      if (button.innerText == question[q].correctAnswer) {
+        console.log(score);
+        document.getElementById('btnhlder2').innerHTML = "";
+        score += 1;
+        console.log(score);
+        scoreBoard.innerHTML = score;
+        q += 1;
+        nextQuestion();
       }
       else {
         console.log('incorrectAnswer')
-        scoreBoard.innerHTML= - 1;
-        clearButton;
-      
+        document.getElementById("btnhlder2").innerHTML = "";
+        scoreBoard.innerHTML = score;
+        console.log(score);
+        scoreBoard.innerHTML = score;
+        q += 1;
+        nextQuestion();
+      }
+      if (quest === questions.length){
+        console.log(endofquiz)
+        
+
+      }
     }
+
+
+
+
+    )
   }
-
-
-
-
-    )}};
+};
+// 
