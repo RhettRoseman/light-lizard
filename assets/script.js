@@ -11,13 +11,13 @@
 // WHEN the game is over
 // THEN I can save my initials and my score'
 //starts timer
-// var textArea = document.getElementById('text-area').innerHTML = "";
-var startBtn = document.getElementById('start');
+var startBtn = document.getElementById('start'); // targets start button
 var scoreBoard = document.getElementById('userScore');
 var score = 0;
-let clearQuestion = document.getElementById('question').innerHTML = "";
 let pEl = document.getElementById("question");
   // let thisBtn = document.getElementById("button-holder").innerHTML = "";
+
+  //start timer function 
 function startTimer() {
   var counter = 120;
   setInterval(function () {
@@ -51,10 +51,6 @@ function userScore() {
   }
   console.log('Increase Score')
 }
-function clearDiv(){
-  // document.getElementsByClassName('button-holder').innerHTML="";
-  removeChild()
-}
 
 const question = [
   {
@@ -87,7 +83,8 @@ function createDiv() {
   div.append(question[0]);
   console.log(question[0])
 }
-// function that shows the questions
+// QUESTION FUNCTIONS 
+// Open Question 0
 function openArray() {
   // let pEl = document.getElementById("question");
 
@@ -102,19 +99,21 @@ function openArray() {
       if (button.innerText == question[0].correctAnswer) {
         console.log('correct');
         scoreBoard.innerHTML = + 1;
+        this.remove('button')
       }
-      else (console.log('incorrectAnswer')
+      else (
+ console.log('incorrect')
       )
     })
   }
 
 };
-
+// Open question 1 
 function nextQuestion() {
   //  document.getElementsByClassName('button-holder').innerHTML="";
   // let nextQuestion = document.getElementById('question').textContent = question[1].title;
   // let nextButton = document.document.getElementsByClassName('button-holder').textContent = question[1].answers[0].index;
-  
+  document.documentElement.textContent = "";
   // let pEl = document.getElementById("question");
 
   pEl.textContent = question[1].title;
@@ -124,13 +123,13 @@ function nextQuestion() {
     let button = document.createElement("button");
     // button.textContent = "";
     button.textContent = question[1].answers[index];
-    console.log(document.getElementById("button-holder"));
-    document.getElementsByClassName("button-holder")[0].appendChild(button);
+    console.log(document.getElementById("btnhlder2"));
+    document.getElementsByClassName("btnhlder2")[0].appendChild(button);
     button.addEventListener('click', function () {
       if (button.innerText == question[1].correctAnswer) {
         console.log('correct');
         scoreBoard.innerHTML = + 1;
-        clearButton;
+        document.getElementsById("buttons")
       }
       else {
         console.log('incorrectAnswer')
