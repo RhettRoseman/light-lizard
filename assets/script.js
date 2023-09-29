@@ -15,6 +15,9 @@
 var startBtn = document.getElementById('start');
 var scoreBoard = document.getElementById('userScore');
 var score = 0;
+let clearQuestion = document.getElementById('question').innerHTML = "";
+let pEl = document.getElementById("question");
+  // let thisBtn = document.getElementById("button-holder").innerHTML = "";
 function startTimer() {
   var counter = 120;
   setInterval(function () {
@@ -25,30 +28,33 @@ function startTimer() {
     }
     if (counter === 0) {
       clearInterval(counter);
-      document.getElementById('body').innerHTML= "Times up!!";
+      document.getElementById('body').innerHTML = "Times up!!";
     }
   }, 1000);
 }
 function start() {
   document.getElementById("count").style = "color:green;";
   startTimer();
-  document.getElementById('text-area').innerHTML= "";
+  document.getElementById('text-area').innerHTML = "";
 
 
 };
 
 
-  function userScore() {
-  scoreBoard.innerHTML= "score";
-    if (selectedAnswer === 'correct') {
-        userScore = score + 1; // increases scoreCounter by 
+function userScore() {
+  scoreBoard.innerHTML = "score";
+  if (selectedAnswer === 'correct') {
+    userScore = score + 1; // increases scoreCounter by 
 
-        // sets the element text to the current score
-        scoreCounterElement.innerText = scoreCounter; 
-    }
-    console.log('Increase Score')
-} 
-
+    // sets the element text to the current score
+    scoreCounterElement.innerText = scoreCounter;
+  }
+  console.log('Increase Score')
+}
+function clearDiv(){
+  // document.getElementsByClassName('button-holder').innerHTML="";
+  removeChild()
+}
 
 const question = [
   {
@@ -83,7 +89,7 @@ function createDiv() {
 }
 // function that shows the questions
 function openArray() {
-  let pEl = document.getElementById("question");
+  // let pEl = document.getElementById("question");
 
   pEl.textContent = question[0].title;
 
@@ -100,37 +106,41 @@ function openArray() {
       else (console.log('incorrectAnswer')
       )
     })
-  } 
+  }
 
 };
 
-function nextQuestion(){
- let thisQuestion = document.getElementById('question').innerHTML="";
-//  document.getElementsByClassName('button-holder').innerHTML="";
-// let nextQuestion = document.getElementById('question').textContent = question[1].title;
-// let nextButton = document.document.getElementsByClassName('button-holder').textContent = question[1].answers[0].index;
-let pEl = document.getElementById("question");
+function nextQuestion() {
+  //  document.getElementsByClassName('button-holder').innerHTML="";
+  // let nextQuestion = document.getElementById('question').textContent = question[1].title;
+  // let nextButton = document.document.getElementsByClassName('button-holder').textContent = question[1].answers[0].index;
+  
+  // let pEl = document.getElementById("question");
 
   pEl.textContent = question[1].title;
 
-for (let index = 0; index < question[1].answers.length; index++) {
-  let button = document.createElement("button");
-  document.getElementsByClassName("button-holder").innerHTML="";
-  // button.textContent = "";
-  button.textContent = question[1].answers[index];
-  console.log(document.getElementById("button-holder"));
-  document.getElementsByClassName("button-holder")[0].appendChild(button);
-  button.addEventListener('click', function () {
-    if (button.innerText == question[1].correctAnswer) {
-      console.log('correct');
-      scoreBoard.innerHTML = + 1;
+  for (let index = 0; index < question[1].answers.length; index++) {
+  
+    let button = document.createElement("button");
+    // button.textContent = "";
+    button.textContent = question[1].answers[index];
+    console.log(document.getElementById("button-holder"));
+    document.getElementsByClassName("button-holder")[0].appendChild(button);
+    button.addEventListener('click', function () {
+      if (button.innerText == question[1].correctAnswer) {
+        console.log('correct');
+        scoreBoard.innerHTML = + 1;
+        clearButton;
+      }
+      else {
+        console.log('incorrectAnswer')
+        scoreBoard.innerHTML= - 1;
+        clearButton;
+      
     }
-    else (console.log('incorrectAnswer')
-    )
-  })
-} 
-
-};
+  }
 
 
 
+
+    )}};
