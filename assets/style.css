@@ -1,7 +1,10 @@
-/* 
+/* *{
+    background-image:url(images/htmljs.jpg);
+    color: white;
+}
 h1{
     color: white;
-    text-align: center; */
+    text-align: center;
 }
 button{
     background-color: rgb(16, 105, 88);
@@ -14,10 +17,9 @@ color: black;
  align-items: center;
  text-align: center;
  color: #1fdcdc;
+ padding: 0%;
+ background-image: url(../greg-rakozy-vw3Ahg4x1tY-unsplash\ \(1\).jpg);
 }
-#body {
-    background-image: url(https://unsplash.com/photos/vw3Ahg4x1tY) ;
+body {
+    background-image:url(../marvin-meyer-SYTO3xs06fU-unsplash.jpg)
 }
-/* html{
-
-} */

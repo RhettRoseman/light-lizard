@@ -13,37 +13,16 @@
 //starts timer
 var startBtn = document.getElementById('start'); // targets start button
 var scoreBoard = document.getElementById('userScore');
-var labelEl = document.createElement("label");
+var label = document.createElement("label");
 var score = 0;
 var q = 0;
 let pEl = document.getElementById("question");
-let input = localStorage.getItem('input');
 var quest = document.getElementById('question-holder');
-var counter = 60;
-const form = document.querySelector("form");
-
-form.addEventListener('submit', (e) =>{
-  e.preventDefault();
-  const fd = new FormData(form);
-  const obj = Object.fromEntries(fd);
-
-  const json = JSON.stringify(obj);
-  const textContent = fd.textContent
-  localStorage.setItem('form', json)
-  console.log(textContent);
-})
-
 // let thisBtn = document.getElementById("button-holder").innerHTML = "";
 
 //start timer function 
-function showEl(){
-  input = document.getElementById("input").textContent
-  localStorage.setItem('input', input);
- console.log(input);
-};
 function startTimer() {
-
-  // var counter = 120;
+  var counter = 120;
   setInterval(function () {
     counter--;
 
@@ -55,6 +34,11 @@ function startTimer() {
       clearInterval(counter);
       document.getElementById("textandquestion").innerHTML = "Times up!! How did you do?";
     }
+    if (quest === ""){
+      clearInterval(counter);
+      document.getElementById("textandquestion").innerHTML = "";
+    }
+
   }, 1000);
 }
 function start() {
@@ -97,9 +81,8 @@ const question = [
     correctAnswer: "Lexical",
   },
   {
-    title: "", // stops function and shows score 
-  },
-
+  title: "",
+  }
 ]
 // function vstar () {
 //    var start = document.getElementById('start')
@@ -111,10 +94,6 @@ function createDiv() {
   div.append(question[0]);
   console.log(question[0])
 }
-function removeTxt(){
-quest.innerHTML= "";
-}
-
 // QUESTION FUNCTIONS 
 // Open Question 0
 // function openArray() {
@@ -173,7 +152,6 @@ function nextQuestion() {
         nextQuestion();
       }
       if (question[3]){
-        document.getElementById("question").innerHTML= "";
-        document.getElementById("count").innerHTML= "";
-      }
-    })}};
+      console.log(quizover);
+    }
+  })}};
