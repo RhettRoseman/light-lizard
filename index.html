@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/style.css">
     <title>Quiz App</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
@@ -14,9 +13,18 @@
     <div class="container">
         <div id="question-container" class="hide"></div>
     </div>
+    <!-- divs in the whole of the body and ids it body -->
     <div id="body">
+        <!-- puts together clock  -->
         <div class="controls">
             <span id="count">120</span> seconds
+            <div id="inputBox">
+                <!-- logs data in console -->
+                <form action="text">
+            <input id="input" type="text" placeholder="Name/score">
+             <button onclick="showEl()">Submit</button>
+            </form>
+            </div>
             <br>
             <div id="userScore"></div>
             <div id = "textandquestion">
@@ -34,11 +42,13 @@
                 <div id="buttons">
                     <div id="btnholder" class="button-holder" onclick="nextQuestion()"></div>
                     <div id="btnhlder2"></div>
-                    <div id="nxt"></div>
+                    <!-- <div id="nxt"></div> -->
                 </div>
             </div>
             </div>
         </div>
+
+<!-- <label id="label" for="Name"></label> -->
 
         <!-- <div id="qcc"></div>
     <h2 id="questions container"></h2>

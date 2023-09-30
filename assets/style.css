@@ -1,10 +1,7 @@
-/* *{
-    background-image:url(images/htmljs.jpg);
-    color: white;
-}
+/* 
 h1{
     color: white;
-    text-align: center;
+    text-align: center; */
 }
 button{
     background-color: rgb(16, 105, 88);
@@ -13,7 +10,14 @@ button{
 color: black;
 
 } */
-.text-area{
+#text-area{
+ align-items: center;
  text-align: center;
- color: #232b2b;
+ color: #1fdcdc;
 }
+#body {
+    background-image: url(https://unsplash.com/photos/vw3Ahg4x1tY) ;
+}
+/* html{
+
+} */
